@@ -19,7 +19,7 @@ namespace {
         struct in_addr ia{};
         inet_aton("127.0.0.1", &ia);
 
-        EXPECT_EQ(&ia.s_addr, wildcat::net::IPv4Address::parse("127.0.0.1").addr());
+        EXPECT_EQ(ia.s_addr, *wildcat::net::IPv4Address::parse("127.0.0.1").addr());
     }
 
     TEST(AddressInfo, GetAddressInfo) {
