@@ -122,7 +122,7 @@ namespace wildcat::net {
     namespace {
 
         /// Translates a service, defined by a host and port, to a vector of IP v4 socket addresses
-        std::vector<IPv4SocketAddress> getAddressInfo(const std::string &host, const std::string &port) {
+        std::vector<IPv4SocketAddress> getAddressInfo(const std::string &host, std::uint16_t port) {
             // https://man7.org/linux/man-pages/man3/getaddrinfo.3.html
             // Initialize hints for TCP socket (SOCK_STREAM) and IPv4 address (AF_INET)
             struct addrinfo hints{};
@@ -130,9 +130,9 @@ namespace wildcat::net {
             hints.ai_family = AF_INET;
             hints.ai_socktype = SOCK_STREAM;
 
-            struct addrinfo *ai;
             // Allocates and initializes a linked list of addrinfo structures pointed to by ai
-            auto result = getaddrinfo(host.c_str(), port.c_str(), &hints, &ai);
+            struct addrinfo *ai;
+            auto result = getaddrinfo(host.c_str(), std::to_string(port).c_str(), &hints, &ai);
             if (result < 0) {
                 if (ai) {
                     freeaddrinfo(ai);

@@ -23,7 +23,7 @@ namespace {
     }
 
     TEST(AddressInfo, GetAddressInfo) {
-        const auto ai = wildcat::net::getAddressInfo("127.0.0.1", "5555");
+        const auto ai = wildcat::net::getAddressInfo("127.0.0.1", 5555);
         EXPECT_EQ(1, ai.size());
         auto e = ai[0];
 
