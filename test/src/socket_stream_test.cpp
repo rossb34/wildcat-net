@@ -49,7 +49,7 @@ namespace {
 
     TEST(SocketStream, Connect) {
         wildcat::net::SocketStream ss;
-        EXPECT_ANY_THROW(ss.connect("127.0.0.1", "5555"));
+        EXPECT_ANY_THROW(ss.connect("127.0.0.1", 5555));
     }
 
     // TODO: test send and recv

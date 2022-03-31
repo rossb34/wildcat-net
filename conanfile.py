@@ -3,7 +3,7 @@ from conans import ConanFile, CMake, tools
 
 class NetConan(ConanFile):
     name = "wildcat-net"
-    version = "0.1.0"
+    version = "0.1.1"
     license = "MIT"
     author = "<Ross Bennett> <rossbennett34@gmail.com>"
     url = "https://github.com/rossb34/wildcat-net"

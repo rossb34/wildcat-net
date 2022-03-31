@@ -63,7 +63,7 @@ namespace wildcat::net {
         ///
         /// \param host host to connect to
         /// \param port port to connect to
-        void connect(const std::string &host, const std::string &port) const {
+        void connect(const std::string &host, std::uint16_t port) const {
             const auto addressInfo = getAddressInfo(host, port);
 
             if (blocking_) {
