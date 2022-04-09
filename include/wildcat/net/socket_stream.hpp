@@ -79,6 +79,14 @@ namespace wildcat::net {
             }
         }
 
+        /// Disconnects the socket
+        void disconnect() {
+            if (fd_ != -1) {
+                close(fd_);
+                fd_ = -1;
+            }
+        }
+
         /// Receives len bytes of data in buffer from the socket file descriptor
         ///
         /// \param buffer buffer to receive len bytes of data.
