@@ -27,6 +27,23 @@ namespace wildcat::net {
         std::string msg_;
     };
 
+    class SSLError : public std::exception {
+    public:
+        SSLError(int code, const std::string &msg) : code_(code), msg_(msg) {}
+
+        [[nodiscard]] const char *what() const noexcept override {
+            return msg_.c_str();
+        }
+
+        [[nodiscard]] int code() const noexcept {
+            return code_;
+        }
+
+    private:
+        int code_;
+        std::string msg_;
+    };
+
 }
 
 #endif //WILDCAT_NET_ERROR_HPP

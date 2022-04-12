@@ -8,7 +8,7 @@ set(LIB_NAME wildcat_net)
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 
-add_library(wildcat_net library.cpp library.h include/wildcat/net/address.hpp include/wildcat/net/error.hpp include/wildcat/net/socket_stream.hpp)
+add_library(wildcat_net include/wildcat/net/address.hpp include/wildcat/net/error.hpp include/wildcat/net/socket_stream.hpp include/wildcat/net/ssl_context.hpp include/wildcat/net/secure_socket_stream.hpp)
 
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include")
 

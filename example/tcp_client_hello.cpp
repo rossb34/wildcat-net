@@ -11,7 +11,7 @@ int main() {
     ss.setNoDelay(true);
 
     try {
-        ss.connect("localhost", "6789");
+        ss.connect("localhost", 6789);
     } catch (wildcat::net::IOError &e) {
         std::cerr << "Failed to connect socket with error code: " << e.code() << ", msg: " << e.what() << std::endl;
         exit(EXIT_FAILURE);
